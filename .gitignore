@@ -1,0 +1,23 @@
+# Build file
+dist
+build
+
+# Dependency directory
+node_modules
+
+# Optional npm cache directory
+.npm
+
+# Mac
+.DS_Store
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Covers JetBrains IDEs
+*.iml
+
+## Directory-based project format:
+.idea/
