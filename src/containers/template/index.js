@@ -1,12 +1,14 @@
+// @flow
+
 import { connect } from 'react-redux';
-import { blankAction } from './actions';
+import { actionName } from './actions';
 
-const mapStateToProps = state => ({
-  data: state
-})
+import type { State, Dispatch } from '../../types';
 
-const mapDispatchToProps = dispatch => ({
-  onEventFire: id => dispatch(blankAction(id))
+const mapStateToProps = (state: State): Object => ({});
+
+const mapDispatchToProps = (dispatch: Dispatch): Object => ({
+  onFire: query => dispatch(actionName(query))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Component);
