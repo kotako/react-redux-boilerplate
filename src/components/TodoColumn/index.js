@@ -1,20 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
 
-const TodoColumn = ({ onClick, completed, text }) => (
+import React from 'react';
+
+import type { Todo } from '../../types';
+
+type Props = {
+  onClick: Function,
+  todo: Todo
+};
+
+const TodoColumn = ({ onClick, todo }: Props) => (
   <li
     onClick={onClick}
     style={{
-      textDecoration: completed ? 'line-through' : 'none'
+      textDecoration: todo.completed ? 'line-through' : 'none'
     }}>
-    {text}
+    {todo.text}
   </li>
 );
-
-TodoColumn.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  completed: PropTypes.bool.isRequired,
-  text: PropTypes.string.isRequired
-};
 
 export default TodoColumn;

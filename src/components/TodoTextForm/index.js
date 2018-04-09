@@ -1,13 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
 
-const TodoTextForm = ({ addTodo }) => {
-  let input;
+import React from 'react';
+
+type Props = {
+  addTodo: Function
+};
+
+const TodoTextForm = ({ addTodo }: Props) => {
+  let input: ?HTMLInputElement;
   return (
     <div>
       <form onSubmit={e => {
           e.preventDefault();
-          if (!input.value.trim()) return;
+          if (input == null || !input.value.trim()) return;
           addTodo(input.value);
           input.value = '';
         }}>
@@ -17,9 +22,5 @@ const TodoTextForm = ({ addTodo }) => {
     </div>
   );
 };
-
-TodoTextForm.propTypes = {
-  addTodo: PropTypes.func.isRequired
-}
 
 export default TodoTextForm;

@@ -1,11 +1,19 @@
+// @flow
+
 import { connect } from 'react-redux';
 import { addTodo } from './actions';
 import TodoTextForm from '../../components/TodoTextForm';
 
-const mapStateToProps = state => ({});
+import type { Dispatch, State } from '../../types';
 
-const mapDispatchToProps = dispatch => ({
-  addTodo: text => dispatch(addTodo(text))
+const mapStateToProps = (state: State): Object => ({});
+
+const mapDispatchToProps = (dispatch: Dispatch): Object => ({
+  addTodo: (text: string) => dispatch(addTodo({
+    id: Date.now(),
+    completed: false,
+    text
+  }))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoTextForm);

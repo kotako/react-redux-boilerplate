@@ -1,13 +1,17 @@
+// @flow
+
 import { connect } from 'react-redux';
 import TodoList from '../../components/TodoList';
 import { toggleTodo } from './actions';
 
-const mapStateToProps = state => ({
-  todos: state.TodoList || []
-})
+import type { State, Dispatch } from '../../types';
 
-const mapDispatchToProps = dispatch => ({
-  toggleTodo: id => dispatch(toggleTodo(id))
+const mapStateToProps = (state: State): Object => ({
+  todos: state.TodoList
+});
+
+const mapDispatchToProps = (dispatch: Dispatch): Object => ({
+  toggleTodo: todo => dispatch(toggleTodo(todo))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
