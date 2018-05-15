@@ -12,13 +12,9 @@ type Props = {
 
 const TodoList = ({ todos, toggleTodo }: Props) => (
   <ul>
-    {todos.map(todo =>
-      <TodoColumn
-        key={todo.id}
-        todo={todo}
-        onClick={() => toggleTodo(todo)}
-      />
-    )}
+    {todos.map(todo => (
+      <TodoColumn key={todo.id} todo={todo} onClick={() => toggleTodo(todo)} />
+    ))}
   </ul>
 );
 

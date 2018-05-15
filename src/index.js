@@ -5,7 +5,7 @@ import { createStore } from 'redux';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './containers/App';
-import reducers from './reducers'
+import reducers from './reducers';
 import registerServiceWorker from './config/registerServiceWorker';
 
 import type { Store } from './types';
@@ -18,6 +18,6 @@ ReactDOM.render(
     <App />
   </Provider>,
   element
- );
+);
 
 registerServiceWorker();

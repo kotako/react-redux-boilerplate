@@ -9,6 +9,6 @@ const mapStateToProps = (state: State): Object => ({});
 
 const mapDispatchToProps = (dispatch: Dispatch): Object => ({
   onFire: query => dispatch(actionName(query))
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Component);

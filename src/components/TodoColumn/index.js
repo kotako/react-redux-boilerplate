@@ -14,7 +14,8 @@ const TodoColumn = ({ onClick, todo }: Props) => (
     onClick={onClick}
     style={{
       textDecoration: todo.completed ? 'line-through' : 'none'
-    }}>
+    }}
+  >
     {todo.text}
   </li>
 );
