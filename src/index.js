@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom';
 import App from './containers/App';
 import reducers from './reducers';
 import registerServiceWorker from './config/registerServiceWorker';
+import './config/globalStyle';
 
 import type { Store } from './types';
 
