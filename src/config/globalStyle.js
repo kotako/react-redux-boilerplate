@@ -1,8 +1,8 @@
 // @flow
 
-import { injectGlobal } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
-injectGlobal`
+createGlobalStyle`
   html, body {
     margin: 0;
   }
