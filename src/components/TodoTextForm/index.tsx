@@ -1,13 +1,11 @@
-// @flow
+import React from "react";
 
-import React from 'react';
-
-type Props = {
-  addTodo: Function
-};
+interface Props {
+  addTodo: (text: string) => void;
+}
 
 const TodoTextForm = ({ addTodo }: Props) => {
-  let input: ?HTMLInputElement;
+  let input: any;
   return (
     <div>
       <form
@@ -15,7 +13,7 @@ const TodoTextForm = ({ addTodo }: Props) => {
           e.preventDefault();
           if (input == null || !input.value.trim()) return;
           addTodo(input.value);
-          input.value = '';
+          input.value = "";
         }}
       >
         <input ref={node => (input = node)} />

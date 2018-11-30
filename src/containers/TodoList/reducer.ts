@@ -1,11 +1,9 @@
-// @flow
+import { Actions as TodoListActions } from "./actions";
+import { Actions as AddTodoActions } from "../AddTodo/actions";
 
-import { Actions as TodoListActions } from './actionTypes';
-import { Actions as AddTodoActions } from '../AddTodo/actionTypes';
+import { Todo, Action } from "../../types";
 
-import type { Todos, Action } from '../../types';
-
-export type State = Todos;
+export type State = Array<Todo>;
 
 export default (state: State = [], action: Action): State => {
   switch (action.type) {

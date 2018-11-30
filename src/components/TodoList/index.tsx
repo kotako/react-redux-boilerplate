@@ -1,14 +1,11 @@
-// @flow
+import React from "react";
+import TodoColumn from "../TodoColumn";
+import { Todo } from "../../types";
 
-import React from 'react';
-import TodoColumn from '../TodoColumn';
-
-import type { Todos } from '../../types';
-
-type Props = {
-  todos: Todos,
-  toggleTodo: Function
-};
+interface Props {
+  todos: Array<Todo>;
+  toggleTodo: (todo: any) => void;
+}
 
 const TodoList = ({ todos, toggleTodo }: Props) => (
   <ul>
